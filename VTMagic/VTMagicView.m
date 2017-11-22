@@ -156,11 +156,18 @@ static const void *kVTMagicView = &kVTMagicView;
     [self updateFrameForRightNavigationItem];
 }
 
+- (void)setNavigationItemInset:(UIEdgeInsets)navigationItemInset {
+    _navigationItemInset = navigationItemInset;
+    
+    [self updateFrameForLeftNavigationItem];
+    [self updateFrameForRightNavigationItem];
+}
 - (void)updateFrameForLeftNavigationItem {
     CGRect leftFrame = _leftNavigatoinItem.bounds;
     CGFloat offset = CGRectGetHeight(leftFrame)/2;
     leftFrame.origin.y = CGRectGetMidY(_navigationView.bounds) - offset;
     if (_againstStatusBar && _headerHidden) leftFrame.origin.y += VTSTATUSBAR_HEIGHT/2;
+    leftFrame = UIEdgeInsetsInsetRect(leftFrame, _navigationItemInset);
     _leftNavigatoinItem.frame = leftFrame;
 }
 
@@ -170,6 +177,7 @@ static const void *kVTMagicView = &kVTMagicView;
     rightFrame.origin.x = _navigationView.frame.size.width - rightFrame.size.width;
     rightFrame.origin.y = CGRectGetMidY(_navigationView.bounds) - offset;
     if (_againstStatusBar && _headerHidden) rightFrame.origin.y += VTSTATUSBAR_HEIGHT/2;
+    rightFrame = UIEdgeInsetsInsetRect(rightFrame, _navigationItemInset);
     _rightNavigatoinItem.frame = rightFrame;
 }
 

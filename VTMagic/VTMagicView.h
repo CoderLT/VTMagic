@@ -281,6 +281,7 @@ NS_ASSUME_NONNULL_BEGIN
  *  导航菜单栏的inset，对leftNavigatoinItem和rightNavigatoinItem无效
  */
 @property (nonatomic, assign) UIEdgeInsets navigationInset;
+@property (nonatomic, assign) UIEdgeInsets navigationItemInset;
 
 /**
  *  顶部导航栏背景色
