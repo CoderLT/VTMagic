@@ -167,7 +167,7 @@ static const void *kVTMagicView = &kVTMagicView;
     CGFloat offset = CGRectGetHeight(leftFrame)/2;
     leftFrame.origin.y = CGRectGetMidY(_navigationView.bounds) - offset;
     if (_againstStatusBar && _headerHidden) leftFrame.origin.y += VTSTATUSBAR_HEIGHT/2;
-    leftFrame.origin.x -= _navigationItemInset.right;
+    leftFrame.origin.x -= _navigationItemInset.left;
     leftFrame.origin.y -= _navigationItemInset.bottom;
     _leftNavigatoinItem.frame = leftFrame;
 }
