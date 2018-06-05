@@ -131,7 +131,7 @@ static const void *kVTMagicView = &kVTMagicView;
     CGRect originalMenuFrame = _menuBar.frame;
     CGFloat menuBarY = _headerHidden ? topY : 0;
     CGFloat leftItemWidth = CGRectGetMaxX(_leftNavigatoinItem.frame);
-    CGFloat rightItemWidth = size.width - _rightNavigatoinItem.frame.origin.x;
+    CGFloat rightItemWidth = _rightNavigatoinItem.frame.size.width > 0 ? size.width - _rightNavigatoinItem.frame.origin.x : 0;
     CGFloat catWidth = size.width - leftItemWidth - rightItemWidth;
     _menuBar.frame = CGRectMake(leftItemWidth, menuBarY, catWidth, _navigationHeight);
     if (!CGRectEqualToRect(_menuBar.frame, originalMenuFrame)) {
