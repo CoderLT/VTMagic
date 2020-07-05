@@ -24,7 +24,7 @@ static NSString *reuseIdentifier = @"grid.reuse.identifier";
 @implementation VTGridViewController
 
 - (instancetype)init {
-    BOOL iPhoneDevice = kiPhoneDevice;
+    BOOL iPhoneDevice = VT_kiPhoneDevice;
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     layout.scrollDirection = UICollectionViewScrollDirectionVertical;
     layout.sectionInset = iPhoneDevice ?UIEdgeInsetsMake(10, 10, 10, 10) : UIEdgeInsetsMake(20, 20, 20, 20);
